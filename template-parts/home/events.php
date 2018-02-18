@@ -84,9 +84,7 @@
 
                                 while( $event->have_posts() ):$event->the_post();
                     $variables = get_post_meta(get_the_ID(), 'wiki_test_repeat_group', true);
-                    echo "<pre>";
-                    print_r($variables);
-       				echo "</pre>";
+             
                     foreach ($variables as $value) : 
 
 				

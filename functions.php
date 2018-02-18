@@ -58,3 +58,11 @@ require_once('libs/cmb2/custom-cmb2.php');
 
 
 
+/**
+*
+*
+* redux framework
+*
+*/
+require_once('libs/redux/ReduxCore/framework.php');
+require_once('libs/redux/sample/barebones-config.php');
