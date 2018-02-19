@@ -419,6 +419,58 @@
                     'url'       =>  get_template_directory_uri().'/assets/images/sec-img/sbg.png'
                 )
             ),
+            array(
+            'title' => __('Add Service Title', 'school'),
+            'subtitle' => __('Add Service Icon', 'school'),
+            'desc' => __('You can add service description', 'school'),
+            'id' => 'service_items',
+            'type' => 'slides',
+            'placeholder' => array(
+                'title' => __('Add Service Title Here', 'school'),
+                'desc' => __('Add Services Content Here', 'school'),
+                'url' => __('Service Icon', 'school'),
+                
+            )
+        ),
+        )
+    ));
+
+
+ /**
+    *
+    *
+    * services section
+    *
+    */
+
+    Redux::setSection( $opt_name, array(
+        'title'         => 'Clients Section',
+        'id'            => 'clients-section',
+        'desc'          => 'Manage Clients Section',
+        'icon'          => 'el el-leaf'
+    ));
+
+
+    Redux::setSection( $opt_name, array(
+        'title'     => 'Manage Clients',
+        'id'        => 'manage-clients',
+        'desc'      => 'Manage Client Section from here',
+        'subsection'=> true,
+        'fields'    => array(
+           
+            array(
+            'title' => __('Add Clients Info', 'school'),
+            'subtitle' => __('Manage Your Clients Info', 'school'),
+            'desc' => __('You can add clients info from here', 'school'),
+            'id' => 'client_items',
+            'type' => 'slides',
+            'placeholder' => array(
+                'title' => __('Add Client Type', 'school'),
+                'desc' => __('Add Clients Number', 'school'),
+                'url' => __('Leave it blank', 'school'),
+                
+                )
+            ),
         )
     ));
 

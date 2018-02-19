@@ -1,12 +1,11 @@
 <?php 
 
     global $julfiker;
+    $title = $julfiker['gs-testimonail'];
     $items = $julfiker['hi_er_tajul_testi'];
    
-   echo "<pre>";
-   print_r($items);
-   echo "</pre>";
-    ?>
+
+?>
 
 
 
@@ -17,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-right">
-                    <h2 class="section-title white"><?php echo $testimonial_items; ?>Testimonials</h2>
+                    <h2 class="section-title white"><?php echo $title; ?></h2>
                 </div>
             </div>
             <!-- end row -->
@@ -51,7 +50,7 @@
                 <!-- end testimonals active -->
             </div>
     <?php else: ?>
-        No post found
+        <h1>No Testimonial  found</h1>
     <?php endif; ?>
 
         </div>

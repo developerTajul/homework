@@ -9,84 +9,48 @@
             </div>
             <!-- end row -->
             <div class="row">
+<?php 
+
+    $latest_post = new WP_Query(array(
+        'post_type'     => 'post',
+        'posts_per_page'    => -1
+
+    ));
+
+    while( $latest_post->have_posts() ):$latest_post->the_post();
+
+
+?>
+
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="single-blog">
                             <div class="blog-thumb">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/b1.jpg" alt="">
                                 <div class="thumb-tato">
-                                    <span class="month">Dec</span>
-                                    <span class="date">10-2017</span>
+                                    <span class="month"><?php the_time('M'); ?></span>
+                                    <span class="date"><?php the_time('d'); ?>-<?php the_time('Y'); ?></span>
                                     <a href="#"><i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                                 <div class="thumb-hover">
                                     <ul>
-                                        <li><a href="#"> <i class="fa fa-user"></i>by admin</a></li>
-                                        <li><a href="#"> <i class="fa fa-comment-o"></i>0 comment</a></li>
+                                        <li><a href="<?php the_author_link(); ?>"> <i class="fa fa-user"></i>by <?php the_author(); ?></a></li>
+                                        <li><a href="<?php the_permalink(); ?>"> <i class="fa fa-comment-o"></i><?php comments_popup_link('0 comment', '1st comment', '% comments', '', 'Comment is disabled now'); ?></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- end blog thumb -->
                             <div class="blog-text">
                                 <a href="#">
-                                    <h2>Finibus Bon et Malorum written Cicero</h2>
+                                    <h2><?php the_title(); ?></h2>
                                 </a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiselit sed do eiusmod tempor incididunt ut labore amet dolore magna aliqua.</p>
+                                <?php the_content(); ?>
                             </div>
                         </div>
                     </div>
-                    <!-- end single blog -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-thumb">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/b2.jpg" alt="">
-                                <div class="thumb-tato">
-                                    <span class="month">Dec</span>
-                                    <span class="date">10-2017</span>
-                                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                                </div>
-                                <div class="thumb-hover">
-                                    <ul>
-                                        <li><a href="#"> <i class="fa fa-user"></i>by admin</a></li>
-                                        <li><a href="#"> <i class="fa fa-comment-o"></i>0 comment</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- end blog thumb -->
-                            <div class="blog-text">
-                                <a href="#">
-                                    <h2>Finibus Bon et Malorum written Cicero</h2>
-                                </a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiselit sed do eiusmod tempor incididunt ut labore amet dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end single blog -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-blog">
-                            <div class="blog-thumb">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/b3.jpg" alt="">
-                                <div class="thumb-tato">
-                                    <span class="month">Dec</span>
-                                    <span class="date">10-2017</span>
-                                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                                </div>
-                                <div class="thumb-hover">
-                                    <ul>
-                                        <li><a href="#"> <i class="fa fa-user"></i>by admin</a></li>
-                                        <li><a href="#"> <i class="fa fa-comment-o"></i>0 comment</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- end blog thumb -->
-                            <div class="blog-text">
-                                <a href="#">
-                                    <h2>Finibus Bon et Malorum written Cicero</h2>
-                                </a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiselit sed do eiusmod tempor incididunt ut labore amet dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end single blog -->
+<?php endwhile; ?>
+
+
+
             </div>
         </div>
     </div>

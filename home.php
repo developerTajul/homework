@@ -5,7 +5,7 @@
         Slider Area Start 
     ========================== 
      -->
-        <?php // get_template_part('template-parts/home/slider'); ?>
+        <?php  get_template_part('template-parts/home/slider'); ?>
     <!-- 
     ==========================
         Slider Area End 
@@ -45,7 +45,7 @@
         About Section Start 
     ========================== 
      -->
-    <?php // get_template_part('template-parts/home/about'); ?>
+    <?php  get_template_part('template-parts/home/about'); ?>
 
 
     <!-- 
@@ -59,7 +59,7 @@
       Services Section Start
     ========================== 
      -->
-    <?php // get_template_part('template-parts/home/services'); ?> 
+    <?php  get_template_part('template-parts/home/services'); ?> 
 
     <!-- 
     ==========================
@@ -73,7 +73,7 @@
     ========================== 
      -->
 
-    <?php // get_template_part('template-parts/home/events'); ?>
+    <?php  get_template_part('template-parts/home/events'); ?>
      
 
     <!-- 
@@ -86,7 +86,7 @@
       happy client end
     ========================== 
      -->
-    <?php // get_template_part('template-parts/home/clients'); ?>
+    <?php  get_template_part('template-parts/home/clients'); ?>
 
     <!-- 
     ==========================
@@ -99,7 +99,7 @@
       Photo Gallery Start
     ========================== 
      -->
-      <?php // get_template_part('template-parts/home/gallery'); ?>
+      <?php  get_template_part('template-parts/home/gallery'); ?>
     
     <!-- 
     ==========================

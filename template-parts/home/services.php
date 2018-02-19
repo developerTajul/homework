@@ -1,49 +1,52 @@
+<?php 
+
+    global $julfiker;
+    $title = $julfiker['ss-title'];
+    $service_bg = $julfiker['service-bg'];
+    $items = $julfiker['service_items'];
+    
+
+?>
+
+
+
     <div class="services-area section-padding" id="ser">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title-rapper">
-                        <h2 class="section-title reverse">Services</h2>
+                        <h2 class="section-title reverse"><?php echo $title; ?></h2>
                     </div>
                 </div>
                 <!-- end single services -->
             </div>
-            <div class="row">
+           
+
+    <?php if(!empty($items['0']['title'])): ?>         
+             <div class="row">
                 <div class="services-active owl-carousel">
+
+      
+   <?php foreach ($items as $key => $value): ?>
                     <div class="col-md-4">
                         <div class="single-services waves-effect waves-teal-2">
-                            <i class="fa fa-bar-chart"></i>
-                            <h3>Professional Consulting</h3>
-                            <p>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum.</p>
+                            <i class="fa <?php echo $value['url']; ?>"></i>
+                            <h3><?php echo $value['title']; ?></h3>
+                            <p><?php echo $value['description']; ?></p>
                         </div>
                     </div>
-                    <!-- end single services -->
-                    <div class="col-md-4">
-                        <div class="single-services waves-effect waves-teal-2">
-                            <i class="fa fa fa-diamond"></i>
-                            <h3>Valuable Ideas</h3>
-                            <p>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum.</p>
-                        </div>
-                    </div>
-                    <!-- end single services -->
-                    <div class="col-md-4">
-                        <div class="single-services waves-effect waves-teal-2">
-                            <i class="fa fa-google-wallet"></i>
-                            <h3>Budget Friendly</h3>
-                            <p>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum.</p>
-                        </div>
-                    </div>
-                    <!-- end single services -->
-                    <div class="col-md-4">
-                        <div class="single-services waves-effect waves-teal-2">
-                            <i class="fa fa-google-wallet"></i>
-                            <h3>Budget Friendly</h3>
-                            <p>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum.</p>
-                        </div>
-                    </div>
-                    <!-- end single services -->
+    <?php endforeach ?> 
+
+
+
+
                 </div>
             </div>
+    <?php else: ?>
+        <h1>No Service item  found</h1>
+    <?php endif; ?>
+
+
             <!-- end rwo -->
         </div>
     </div>
